@@ -1,0 +1,11 @@
+# O dashboard da Torre como recurso do bundle. O JSON é gerado por
+# scripts/gerar_dashboard.py; as queries usam o nome puro da tabela e o
+# catálogo/schema vêm daqui (dataset_catalog/dataset_schema).
+resources:
+  dashboards:
+    dashboard_portfolio:
+      display_name: "Projeto Farol · Portfólio"
+      file_path: ./dashboard-portfolio.lvdash.json
+      warehouse_id: ${var.warehouse_id}
+      dataset_catalog: ${var.catalog}
+      dataset_schema: gold

@@ -1,0 +1,33 @@
+# Estado local do Databricks (inclui ids do workspace e os valores das variáveis)
+.databricks/
+
+# Segredos: as chaves do data lake nunca vão para o Git
+variable-overrides.json
+.env
+.env.*
+*.pem
+*.key
+
+# Contexto de aula / ferramentas locais — não faz parte do projeto
+llm/
+OPENCODE.md
+opencode.json
+
+# Scaffold de exemplo do `databricks bundle init`
+vertice/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDEs e sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs e temporários
+*.log
+tmp/

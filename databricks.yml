@@ -1,0 +1,36 @@
+﻿# Declarative Automation Bundle definition for vertice.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+bundle:
+  name: vertice
+  uuid: f99ac786-2ff5-4b01-a11a-9c0d15e086f7
+
+include:
+  - resources/*.yml
+
+# Variable declarations. Secret values are NOT stored in this file: they are read
+# from the gitignored .databricks/bundle/<target>/variable-overrides.json.
+variables:
+  catalog:
+    description: The catalog to use
+    default: lakehouse_vertice
+  warehouse_id:
+    description: SQL warehouse used by the conferencia_bronze task
+    lookup:
+      warehouse: Serverless Starter Warehouse
+  s3_access_key_id:
+    description: AWS access key id for the data lake bucket
+  s3_secret_access_key:
+    description: AWS secret access key for the data lake bucket
+  aws_default_region:
+    description: AWS region of the data lake bucket
+    default: us-east-1
+
+# O host e o perfil vêm da autenticação da CLI (`databricks auth login` e
+# `--profile`), então o repositório não carrega workspace nem e-mail de ninguém.
+targets:
+  dev:
+    default: true
+    presets:
+      trigger_pause_status: PAUSED
+  prod:
+    mode: production

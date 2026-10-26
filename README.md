@@ -87,12 +87,19 @@ databricks bundle deploy --profile <perfil>
 databricks bundle run vertice_farol --profile <perfil>
 ```
 
+### Dashboard
+
 O dashboard é gerado a partir do código:
 
 ```bash
 python scripts/gerar_dashboard.py
 databricks bundle deploy --profile <perfil>
 ```
+
+![Porfólio](/dashboard/screencapture-dbc-973f5fb1-b24a-cloud-databricks-dashboardsv3.png)
+![Pessoas](/dashboard/screencapture-dbc-973f5fb1-b24a-cloud-databricks-dashboardsv3-01f1d18dec8b1bee9f76dcdde8765c7e.png)
+![Fornecedores](/dashboard/screencapture-dbc-973f5fb1-b24a-cloud-databricks-dashboardsv3-01f1d18dec8b1bee9f76dcdde8765c7e-published.png)
+
 
 Variáveis do bundle: `catalog` (padrão `lakehouse_vertice`), `warehouse_id`
 (resolvido pelo nome `Serverless Starter Warehouse`), `s3_access_key_id`,
